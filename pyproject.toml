@@ -2,7 +2,7 @@
 name = "sdss-tron-lite"
 version = "0.1.0-alpha.0"
 description = "A lite version of the tron message passing system"
-authors = ["José Sánchez-Galle <gallegoj@uw.edu>"]
+authors = ["José Sánchez-Gallego <gallegoj@uw.edu>"]
 license = "BSD-3-Clause"
 readme = "README.md"
 homepage = "https://github.com/sdss/tron_lite"
