@@ -25,7 +25,7 @@ To build from source, use
 ```console
 git clone git@github.com:sdss/tron_lite
 cd tron_lite
-pip install .[docs]
+pip install .
 ```
 
 ## Development

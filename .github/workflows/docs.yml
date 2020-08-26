@@ -1,29 +1,18 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Test
+name: Docs
 
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-      - '*.md'
-      - '*.rst'
   pull_request:
     branches: [ master ]
-    paths-ignore:
-      - '*.md'
-      - '*.rst'
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: [3.7, 3.8]
 
     steps:
 
@@ -40,31 +29,25 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.8
 
-    - name: Install dependencies
+    - name: Install package
       run: |
         python -m pip install --upgrade pip
         pip install .
 
-    - name: Lint with flake8
+    - name: Install Sphinx
       run: |
-        pip install flake8
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --show-source --statistics
+        pip install sphinx
 
-    - name: Lint with isort
+    - name: Build documentation
       run: |
-        pip install isort
-        isort -c python/
+        cd docs/sphinx
+        make html
 
-    - name: Test with pytest
-      run: |
-        pip install pytest pytest-cov pytest-asyncio pytest-mock
-        pip install coverage[toml]
-        pytest
-
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@3.5.9
       with:
-        file: ./coverage.xml
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: docs/sphinx/_build/html # The folder the action should deploy.
