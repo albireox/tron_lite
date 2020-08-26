@@ -6,8 +6,12 @@ name: Docs
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
+    # There is no immediate way to deploy multiple versions to GH Pages but
+    # it should be simple to deploy PR and tags to a directory structure such
+    # as versions/<tag>/ by changing the FOLDER parameter in the Deploy.
+    # We'll need to add that folder to CLEAN_EXCLUDE. To remove versions it
+    # would need to be done manually.
 
 jobs:
   build:
@@ -24,7 +28,7 @@ jobs:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
-            ${{ runner.os }}-pip-
+          ${{ runner.os }}-pip-
 
     - name: Set up Python
       uses: actions/setup-python@v2
