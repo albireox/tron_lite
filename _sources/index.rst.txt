@@ -1,8 +1,8 @@
 
 tron_lite's documentation
-=============================================
+=========================
 
-This is the documentation for the SDSS Python product tron_lite. The current version is |tron_lite_version|. You can install the package by doing
+This is the documentation for the SDSS Python product ``tron_lite``. The current version is |tron_lite_version|. You can install the package by doing
 
 .. code-block:: console
 
@@ -15,21 +15,20 @@ Contents
 .. toctree::
   :maxdepth: 2
 
-  What's new in tron_lite? <CHANGELOG>
-  Introduction to tron_lite <intro>
+  What's new? <CHANGELOG>
 
 
-Reference
----------
+.. Reference
+.. ---------
 
-.. toctree::
-   :maxdepth: 1
+.. .. toctree::
+..    :maxdepth: 1
 
-   api
+..    api
 
 
-Indices and tables
-------------------
+.. Indices and tables
+.. ------------------
 
-* :ref:`genindex`
-* :ref:`modindex`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
