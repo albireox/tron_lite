@@ -2,8 +2,8 @@
 
 [![Versions](https://img.shields.io/badge/python->3.7-blue)](https://docs.python.org/3/)
 [![PyPI version](https://badge.fury.io/py/sdss-tron-lite.svg)](https://badge.fury.io/py/sdss-tron-lite)
-[![Documentation](https://img.shields.io/github/workflow/status/albireox/coordio/Docs)](https://albireox.github.io/tron_lite/)
-[![Test](https://img.shields.io/github/workflow/status/albireox/tron_lite/Test)](https://github.com/albireox/tron_lite/actions?query=workflow%3ATest)
+[![Documentation](https://github.com/albireox/tron_lite/workflows/Docs/badge.svg)](https://albireox.github.io/tron_lite/)
+[![Test](https://github.com/albireox/tron_lite/workflows/Test/badge.svg)](https://github.com/albireox/tron_lite/actions?query=workflow%3ATest)
 [![codecov](https://codecov.io/gh/albireox/tron_lite/branch/master/graph/badge.svg)](https://codecov.io/gh/albireox/tron_lite)
 
 A minimal version of the tron message passing system.
